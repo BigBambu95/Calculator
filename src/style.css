@@ -1,0 +1,94 @@
+:root {
+    --btnWidth: 75px;
+    --btnHeight: 55px;
+    --calculatorPadding: 2.5px;
+    --screenHeight: 100px;
+}
+
+*, 
+*:before,
+*:after {
+    outline: none;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    font-family: Bitter, 'sans-serif';
+}
+
+.calculator {
+    max-width: calc(var(--btnWidth) * 4 + var(--calculatorPadding) * 2);
+    width: 100%;
+    margin: auto;
+    transform: translateY(50%);
+    padding: var(--calculatorPadding);
+    background: #edeef0;
+    box-shadow: 0 0 15px 0.5px rgba(0, 0, 0, .35);
+    overflow: hidden;
+}
+
+.screen {
+    height: var(--screenHeight);
+    padding: .5em;
+    font-weight: bold;
+    text-align: right;
+    overflow: hidden;
+}
+
+.screen__value {
+    font-size: 2rem;
+    overflow: hidden;
+}
+
+.screen__expression {
+    overflow: hidden;
+}
+
+.keyboard {
+    display: flex;
+}
+
+.keyboard .left-panel {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.keyboard .right-panel {
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.btn {
+    width: var(--btnWidth);
+    height: var(--btnHeight);
+    padding: 1em;
+    border: 1px solid rgba(0, 0, 0, .15);
+    background: #fff;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #000;
+    text-align: center;
+    transition: .15s all;
+    cursor: pointer;
+    user-select: none;
+}
+
+.btn:hover {
+    z-index: 10;
+    background: rgba(0, 0, 0, .05);
+    color: #000;
+}
+
+#clear,
+#zero {
+    width: calc(var(--btnWidth) * 2);
+}
+
+
+#equals {
+    height: calc(var(--btnHeight) * 2);
+}
